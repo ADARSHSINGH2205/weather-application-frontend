@@ -1,0 +1,174 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins;
+}
+
+body{
+  background:url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+  background-size:cover;
+  background-position:center;
+}
+
+.app{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.overlay{
+  width:100%;
+  max-width:1000px;
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(20px);
+  padding:30px;
+  border-radius:25px;
+  color:white;
+  box-shadow:0 10px 40px rgba(0,0,0,.4);
+  animation:fade 1s ease;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.search-box{
+  display:flex;
+  gap:10px;
+  margin-bottom:30px;
+}
+
+.search-box input{
+  flex:1;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  outline:none;
+  font-size:16px;
+}
+
+.search-box button{
+  padding:14px 24px;
+  border:none;
+  border-radius:12px;
+  background:#38bdf8;
+  color:white;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.search-box button:hover{
+  transform:scale(1.05);
+}
+
+.weather-card{
+  text-align:center;
+  padding:30px;
+  background:rgba(255,255,255,.08);
+  border-radius:20px;
+  margin-bottom:25px;
+  animation:up .8s ease;
+}
+
+.weather-card img{
+  width:120px;
+  margin-bottom:10px;
+  animation:float 2s infinite ease-in-out;
+}
+
+.details{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.detail-card{
+  background:rgba(255,255,255,.08);
+  padding:20px;
+  border-radius:18px;
+  text-align:center;
+  transition:.3s;
+}
+
+.detail-card:hover{
+  transform:translateY(-5px);
+}
+
+.forecast-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+}
+
+.forecast-card{
+  background:rgba(255,255,255,.08);
+  padding:20px;
+  border-radius:18px;
+  text-align:center;
+  transition:.3s;
+}
+
+.forecast-card:hover{
+  transform:scale(1.05);
+}
+
+.loader{
+  width:50px;
+  height:50px;
+  border:5px solid rgba(255,255,255,.2);
+  border-top:5px solid white;
+  border-radius:50%;
+  margin:20px auto;
+  animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes fade{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+@keyframes up{
+  from{
+    transform:translateY(30px);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}
+
+@media(max-width:700px){
+
+  .search-box{
+    flex-direction:column;
+  }
+
+}
